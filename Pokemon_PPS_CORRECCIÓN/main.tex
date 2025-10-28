@@ -260,7 +260,6 @@ La solución óptima depende de las preferencias del jugador. Por ejemplo:
 \end{itemize}
 
 Para capturar esta flexibilidad, se propone una \textbf{función de costo híbrida} con un parámetro ajustable $\lambda$ que permite al usuario definir el balance deseado entre ambos objetivos.
-\end{itemize}
 
 \subsection{Incidencia en la experiencia de juego}
 
@@ -307,7 +306,9 @@ El problema se modela como un \textbf{grafo dirigido ponderado} $G = (V, E)$, do
 
 \subsection{Parámetros del modelo}
 
-Para cada zona $i \in V$ y cada estadística $s \in \{\text{HP, Attack, Defense, SP\_Attack, SP\_Defense, Speed}\}$, se define:
+Para cada zona $i \in V$ y cada estadística 
+$$s \in \{\text{HP, Attack, Defense, SP\_Attack, SP\_Defense, Speed}\},$$
+se define:
 
 \begin{itemize}
     \item $\text{EV}_{i,s}$: Tasa promedio de EVs ganados por encuentro en la zona $i$ para la estadística $s$, calculada como:
@@ -365,7 +366,7 @@ $$\min \quad Z = \sum_{i \in V} x_i + \lambda \sum_{(i,j) \in E} d_{ij} \cdot y_
     $$x_i \geq 0, \quad \forall i \in V$$
 \end{enumerate}
 
-\subsection{Interpretación del factor $\lambda$}
+\subsection{Interpretación del factor \texorpdfstring{$\lambda$}{lambda}}
 
 El parámetro $\lambda$ controla el balance entre eficiencia de combate y costo de desplazamiento:
 
@@ -460,7 +461,7 @@ Aunque el modelo basado en grafos es la opción principal, se consideran las sig
     \item \textbf{Aplicación con almacenamiento en nube:} Integración con bases de datos en la nube para garantizar persistencia, accesibilidad desde múltiples dispositivos y sincronización en tiempo real.
 \end{enumerate}
 
-\noindent La selección final del modelo se realizará considerando criterios de rendimiento, escalabilidad, facilidad de mantenimiento y experiencia de usuario.
+La selección final del modelo se realizará considerando criterios de rendimiento, escalabilidad, facilidad de mantenimiento y experiencia de usuario.
 
 \begin{thebibliography}{9}
 
