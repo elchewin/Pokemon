@@ -130,7 +130,16 @@ def main():
         })
 
     df = pd.DataFrame(rows_out)
-    df.to_csv(args.out_csv, index=False)
+
+    # Escribir salida como matriz de 0/1 por filas (solo 'passable')
+    mat = np.zeros((nrows, ncols), dtype=int)
+    for rec in rows_out:
+        mat[rec["row"], rec["col"]] = rec["passable"]
+
+    with open(args.out_csv, "w", encoding="utf-8") as f:
+        for r in range(nrows):
+            line = ", ".join(str(int(v)) for v in mat[r, :])
+            f.write(line + "\n")
 
     # 3) Overlay de validación
     # Pintamos celdas transitables en cian, bloqueadas en rojo; encounter agrega verde encima.
